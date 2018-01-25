@@ -1,0 +1,5 @@
+2018-01-25 06:50:22:735 - info: Welcome to Appium v1.4.16 (REV ae6877eff263066b26328d457bd285c0cc62430d)
+2018-01-25 06:50:22:737 - info: Appium REST http interface listener started on 127.0.0.1:4723
+2018-01-25 06:50:22:741 - info: [debug] Non-default server args: {"address":"127.0.0.1","log":"I:\\Code\\Android_Ui_Automation\\report\\2018-01-25\\14\\log\\appium.log"}
+2018-01-25 06:50:22:742 - info: Console LogLevel: debug
+2018-01-25 06:50:22:742 - info: File LogLevel: debug

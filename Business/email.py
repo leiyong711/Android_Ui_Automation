@@ -15,11 +15,9 @@ from email.header import Header
 
 
 def mail():
-    # sender = '18216060753@139.com'       # 发件人1804882096@qq.com
     sender = 'leiyong711@aliyun.com'  # 发件人1804882096@qq.com
-    receivers = 'leiyonghn@163.com'  # 接收邮件，可设置为你的QQ邮箱或者其他邮箱leiyong711@163.com
-    receivers1 = 'leiyong711@163.com'
-    my_pass = 'leiyong711'  # 授权码'ibiaowujreplcbhf'
+    receivers = ''  # 接收邮件，可设置为你的QQ邮箱或者其他邮箱leiyong711@163.com
+    my_pass = ''  # 授权码'ibiaowujreplcbhf'
 
     # 创建一个带附件的实例
     message = MIMEMultipart()
@@ -30,7 +28,7 @@ def mail():
 
     # 邮件正文内容
     timeStr = time.strftime('%Y-%m-%d-%H', time.localtime(time.time()))
-    directory1 = '..\\report\\' + timeStr[:10] + '\\' + timeStr[11:] + '\\log\\'
+    directory1 = '..\\Report\\' + timeStr[:10] + '\\' + timeStr[11:] + '\\log\\'
     directory = os.listdir(directory1)
     print directory
     for i in range(len(directory)):
@@ -53,7 +51,7 @@ def mail():
     # 构造附件2，传送当前目录下的 html测试报告 文件
     the_attachment2 = 'Case_report.html'
     timestr = time.strftime('%Y-%m-%d-%H', time.localtime(time.time()))
-    att2 = MIMEText(open('..\\report\\' + timestr[:10] + '\\' + timestr[11:] + '\\Case_report\\' +
+    att2 = MIMEText(open('..\\Report\\' + timestr[:10] + '\\' + timestr[11:] + '\\Case_report\\' +
                          the_attachment2, 'rb').read(), 'base64', 'utf-8')
     att2["Content-Type"] = 'application/octet-stream'
     att2["Content-Disposition"] = 'attachment; filename='+the_attachment2
@@ -62,7 +60,7 @@ def mail():
     # 构造附件3，传送当前目录下的 appium运行日志 文件
     the_attachment3= "appium.log"
     timestr = time.strftime('%Y-%m-%d-%H', time.localtime(time.time()))
-    att3 = MIMEText(open('..\\report\\' + timestr[:10] + '\\' + timestr[11:] + '\\log\\' +
+    att3 = MIMEText(open('..\\Report\\' + timestr[:10] + '\\' + timestr[11:] + '\\log\\' +
                          the_attachment3, 'rb').read(), 'base64', 'utf-8')
     att3["Content-Type"] = 'application/octet-stream'
     att3["Content-Disposition"] = 'attachment; filename='+the_attachment3
@@ -71,7 +69,7 @@ def mail():
     # 构造附件4，传送当前目录下的 python错误日志 文件
     the_attachment4 = 'mylog.log'
     # timestr = time.strftime('%Y-%m-%d-%H', time.localtime(time.time()))
-    att4 = MIMEText(open('..\\report\\log\\' +
+    att4 = MIMEText(open('..\\Report\\log\\' +
                          the_attachment4, 'rb').read(), 'base64', 'utf-8')
     att4["Content-Type"] = 'application/octet-stream'
     att4["Content-Disposition"] = 'attachment; filename=' + the_attachment4
@@ -81,7 +79,7 @@ def mail():
         server = smtplib.SMTP("smtp.aliyun.com", 25)  # 发件人邮箱中的'SMTP'服务器，端口是25
         server.login(sender, my_pass)  # 括号中对应的是发件人邮箱账号、邮箱密码
         # 括号中对应的是发件人邮箱账号、收件人邮箱账号、发送邮件
-        server.sendmail(sender, receivers1, message.as_string())
+        server.sendmail(sender, receivers, message.as_string())
         # 关闭连接
         server.quit()
         print "邮件发送成功"

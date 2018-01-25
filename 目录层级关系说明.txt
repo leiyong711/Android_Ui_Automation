@@ -10,14 +10,14 @@ Handle 存放操作的类的地方，比如：登录页面的输入、点击等�
     getdevicesinfo.py 获取测试设备信息
     operation.py 元素定位封装
 apps 存放待测试app目录 用来获取app测试包名、类名
-config 存放配置文件，比如apk包名
+Config 存放配置文件，比如apk包名
     app.conf 测试包与测试设备信息
     log.conf log日志配置表
 run 起始位置
-    aapt Mac版获取App信息工具
+    aapt Mac版 获取App信息工具
     aapt.exe Windows获取App信息工具
     run.py 启动测试
-testcase 存放测试用例
-report 测试报告
-HTMLTestRunner.py 生成Html测试报告模板
+Testcase 存放测试用例
+Report 测试报告
+HTMLTestRunnertest.py 生成Html测试报告模板
 appium_server.bat appium服务启动批处理

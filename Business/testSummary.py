@@ -134,9 +134,9 @@ def Excel(caseResult):
     for i in range(0, len(arr2)):  # 写入第二行arr2的内容
         ws.write(10, i, arr2[i].decode('utf-8'), set_style(u'宋体', 270, False))
 
-    createFolder('../report/', '/log')  # 判断文件夹是否存在，不存在则创建
+    createFolder('../Report/', '/log')  # 判断文件夹是否存在，不存在则创建
     timestr = time.strftime('%Y-%m-%d-%H', time.localtime(time.time()))
-    path = '../report/%s/%s/log/%s_%s.xls' \
+    path = '../Report/%s/%s/log/%s_%s.xls' \
            % (timestr[:10], timestr[11:], arr2[0].strip("\r"), arr2[1].strip("\r").replace(' ', '_'))
     w.save(path.decode('utf-8'))  # 以“品牌_机型”命名保存
 
