@@ -13,6 +13,7 @@ apps 存放待测试app目录 用来获取app测试包名、类名
 Config 存放配置文件，比如apk包名
     app.conf 测试包与测试设备信息
     log.conf log日志配置表
+    readConfig.py 获取设备与app配置信息
 run 起始位置
     aapt Mac版 获取App信息工具
     aapt.exe Windows获取App信息工具
